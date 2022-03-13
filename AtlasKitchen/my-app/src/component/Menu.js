@@ -10,7 +10,6 @@ function Menu() {
     const API = apiArr[0];
 
     useEffect(async () => {
-        console.log("useEffect Invoked")
         const response = await fetch(API);
         const res = await response.text();
         const result = JSON.parse(res);
@@ -18,9 +17,6 @@ function Menu() {
         setDataIsLoaded(true);
     }, []);
 
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
 
     return (
         <div className="grid max-w-screen-xl grid-cols-1  px-3 mx-auto mb-12  lg:grid-flow-col-dense lg:grid-cols-4">

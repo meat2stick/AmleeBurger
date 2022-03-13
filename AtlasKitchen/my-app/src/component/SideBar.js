@@ -1,20 +1,10 @@
 import { Menu } from 'antd';
-import { useEffect } from 'react';
 
 function SideBar({ data }) {
-
-    const handleClick = (e) => {
-        console.log('click ', e);
-    };
-
-    useEffect(() => {
-        console.log(data);
-    }, []);
 
     return (
         <div className='fixed lg:visible invisible'>
             <Menu
-                onClick={handleClick}
                 style={{ width: 256 }}
                 defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}
