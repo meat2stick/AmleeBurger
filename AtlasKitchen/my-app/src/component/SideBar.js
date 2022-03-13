@@ -10,7 +10,7 @@ function SideBar({ data }) {
                 defaultOpenKeys={['sub1']}
                 mode="inline"
             >
-                <Menu.ItemGroup key="g1" title="Menu">
+                <Menu.ItemGroup key="g1ASD" title="Menu">
                     {
                         data['sections'].sort((a, b) => a.displayOrder - b.displayOrder).map((section, index) => {
 
@@ -20,16 +20,16 @@ function SideBar({ data }) {
                                         subSection["label"]
                                     )
                                 });
-                                var tempS = <Menu.Item key={index} id={section["label"].replace(' ', '_') + "Link"}>
-                                    <a href={"#" + section["label"].replace(' ', '_')}>
+                                var tempS = <Menu.Item key={"#" + section["label"].replace(' ', '_')+"Link"} id={section["label"].replace(' ', '_') + "Link"}>
+                                    <a key={"#" + section["label"].replace(' ', '_')+"LinkChild"} href={"#" + section["label"].replace(' ', '_')}>
                                         {section["label"]}
                                     </a>
                                 </Menu.Item>
 
                                 var tempSub = subS.map(subName => {
                                     return (
-                                        <Menu.Item id={subName.replace(' ', '_') + "SubLink"}>
-                                            <a className='pl-4' href={"#" + subName.replace(' ', '_') + "Sub"}>
+                                        <Menu.Item key={"#" + subName.replace(' ', '_')+"SubLink"} id={subName.replace(' ', '_') + "SubLink"}>
+                                            <a key={"#" + subName.replace(' ', '_')+"SubLinkChild"} className='pl-4' href={"#" + subName.replace(' ', '_') + "Sub"}>
                                                 {subName}
                                             </a>
                                         </Menu.Item>
@@ -43,8 +43,8 @@ function SideBar({ data }) {
                                 )
                             } else {
                                 return (
-                                    <Menu.Item key={index} id={section["label"].replace(' ', '_') + "Link"}>
-                                        <a href={"#" + section["label"].replace(' ', '_')}>
+                                    <Menu.Item key={"#" + section["label"].replace(' ', '_')+"Link"} id={section["label"].replace(' ', '_') + "Link"}>
+                                        <a key={"#" + section["label"].replace(' ', '_')+"LinkChild"} href={"#" + section["label"].replace(' ', '_')}>
                                             {section["label"]}
                                         </a>
                                     </Menu.Item>
